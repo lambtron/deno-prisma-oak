@@ -5,16 +5,16 @@ const prisma = new PrismaClient();
 const dinosaurData: Prisma.DinosaurCreateInput[] = [
   {
     name: "Aardonyx",
-    description: "An early stage in the evolution of sauropods."
+    description: "An early stage in the evolution of sauropods.",
   },
   {
     name: "Abelisaurus",
-    description: "Abel's lizard has been reconstructed from a single skull."
+    description: "Abel's lizard has been reconstructed from a single skull.",
   },
   {
     name: "Acanthopholis",
-    description: "No, it's not a city in Greece."
-  }
+    description: "No, it's not a city in Greece.",
+  },
 ];
 
 /**
