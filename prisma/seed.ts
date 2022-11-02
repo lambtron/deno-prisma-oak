@@ -1,33 +1,31 @@
-
-import { PrismaClient, Prisma } from "../generated/client/deno/edge.ts";
+import { Prisma, PrismaClient } from "../generated/client/deno/edge.ts";
 
 const prisma = new PrismaClient();
 
-const userData: Prisma.UserCreateInput[] = [
+const dinosaurData: Prisma.DinosaurCreateInput[] = [
   {
-    name: "Alice",
-    email: "alice@prisma.io",
-    posts: {
-      create: [
-        {
-          title: "Join the Prisma Slack",
-          content: "https://slack.prisma.io",
-          published: true
-        }
-      ]
-    }
+    name: "Aardonyx",
+    description: "An early stage in the evolution of sauropods."
+  },
+  {
+    name: "Abelisaurus",
+    description: "Abel's lizard has been reconstructed from a single skull."
+  },
+  {
+    name: "Acanthopholis",
+    description: "No, it's not a city in Greece."
   }
-]
+];
 
 /**
  * Seed the database.
  */
 
-for (const u of userData) {
-  const user = await prisma.user.create({
-    data: u
-  })
-  console.log(`Created user with id: ${user.id}`);
+for (const u of dinosaurData) {
+  const dinosaur = await prisma.dinosaur.create({
+    data: u,
+  });
+  console.log(`Created dinosaur with id: ${dinosaur.id}`);
 }
 console.log(`Seeding finished.`);
 
